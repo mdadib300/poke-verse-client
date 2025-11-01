@@ -11,7 +11,7 @@ const Categories = () => {
         <div>
             <Title heading={'Discover Our Products'}></Title>
             <div className='flex justify-center mb-20'>
-                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
+                <div className="grid [@media(max-width:340px)]:grid-cols-1 grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-5">
                     {
                         sortedProducts.map((product, id) => <ProductCard key={id} productInfo={product}></ProductCard>)
                     }
