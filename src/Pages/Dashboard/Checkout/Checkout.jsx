@@ -5,7 +5,7 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import useCart from "../../../hooks/useCart";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Title from "../../../Components/TItle/Title";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const Checkout = () => {
@@ -17,6 +17,7 @@ const Checkout = () => {
     const [couponCode, setCouponCode] = useState("");
     const axiosSecure = useAxiosSecure();
     const location = useLocation();
+    const navigate = useNavigate();
 
 
     const orderNowItem = location.state?.orderNowItem;
@@ -80,6 +81,8 @@ const Checkout = () => {
                                 title: "Order Placed",
                                 confirmButtonColor: "#262626"
                             });
+                            navigate('/dashboard/orders');
+
                         }
                     })
             }

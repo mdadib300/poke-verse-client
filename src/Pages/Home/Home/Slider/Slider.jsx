@@ -10,7 +10,7 @@ const Slider = () => {
         <div>
             <Carousel
                 autoPlay={true}
-                interval={3000}
+                interval={10000}
                 infiniteLoop={true}
                 stopOnHover={false}
                 showThumbs={false}

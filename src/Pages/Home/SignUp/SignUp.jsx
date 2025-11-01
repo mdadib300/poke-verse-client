@@ -18,12 +18,12 @@ const SignUp = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
 
         if (!passwordRegex.test(password)) {
             Swal.fire({
                 title: "Invalid Password",
-                text: "Your password must be at least 8 characters long and include at least one letter, one number, and one special character (e.g. @, $, !, %, *, ? or &).",
+                text: "Your password must be at least 8 characters long and include at least one letter, one number, and one special character (e.g. @, #, $, %, !, ^, &, *).",
                 icon: "warning",
                 confirmButtonText: "Okay",
                 customClass: {

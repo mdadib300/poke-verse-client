@@ -99,61 +99,92 @@ const ProductDetails = () => {
     }
 
     return (
-        <div>
-            <div className="hero mt-0 lg:mt-10 mb-2 text-sky-400">
-                <div className="hero-content flex-col lg:flex-row items-start gap-8">
+        <div className="hero mt-0 lg:mt-10 mb-2 text-sky-400">
+            <div className="hero-content flex-col lg:flex-col items-start gap-8">
+                <div className="flex flex-col lg:flex-row items-start gap-8 w-full">
+                    <div className="w-full lg:w-1/2">
+                        <Carousel
+                            autoPlay={false}
+                            interval={5000}
+                            infiniteLoop={true}
+                            stopOnHover={false}
+                            showThumbs={false}
+                            showStatus={false}
+                            swipeable={true}
+                            emulateTouch={true}
+                            className="w-full"
+                        >
+                            {product.images.map((image, index) => (
+                                <div key={index}>
+                                    <img
+                                        src={image}
+                                        className="w-full aspect-square object-cover rounded-lg"
+                                    />
+                                </div>
+                            ))}
+                        </Carousel>
+                    </div>
 
-
-                    {/* <div >
-
-                    </div> */}
-
-                    <Carousel
-                        autoPlay={false}
-                        interval={5000}
-                        infiniteLoop={true}   
-                        stopOnHover={false}
-                        showThumbs={false}
-                        showStatus={false}
-                        swipeable={true}       
-                        emulateTouch={true}
-                        className="w-full mr-0 lg:mr-16"
-
-                    >
-                        {
-                            product.images.map((image, index) => <div key={index}>
-                                <img src={image} className="w-full aspect-square object-cover rounded-lg" />
-                            </div>)
-                        }
-
-                    </Carousel>
-
-                    <div className="w-full">
+                    <div className="w-full lg:w-1/2">
                         <h1 className="text-3xl font-bold mb-3">{product.title}</h1>
 
                         <div className="py-3 space-y-1">
-                            <p className="text-xl"><b>Product Type:</b> {product.category}</p>
-                            <p className="text-xl"><b>Sizes:</b> {product.sizes?.map(size => <span key={size}>{size} | </span>)}</p>
-                            <p className="text-xl"><b>Colors:</b> {product.colors?.map(color => <span key={color}>{color} | </span>)}</p>
-                            <p className="text-xl"><b>Price:</b> {product.price} BDT</p>
+                            <p className="text-xl">
+                                <b>Product Type:</b> {product.category}
+                            </p>
+                            <p className="text-xl">
+                                <b>Sizes:</b>{" "}
+                                {product.sizes?.map((size) => (
+                                    <span key={size}>{size} | </span>
+                                ))}
+                            </p>
+                            <p className="text-xl">
+                                <b>Colors:</b>{" "}
+                                {product.colors?.map((color) => (
+                                    <span key={color}>{color} | </span>
+                                ))}
+                            </p>
+                            <p className="text-xl">
+                                <b>Price:</b> {product.price} BDT
+                            </p>
                         </div>
 
                         <div className="mt-4">
                             <form onSubmit={handleAddToCart} className="space-y-2">
                                 <fieldset className="fieldset">
                                     <label className="block text-sky-400 font-medium mt-2">Size</label>
-                                    <select defaultValue="" className="select bg-white border border-sky-400 w-full" name="size">
-                                        <option disabled value="">Select Size (If applicable)</option>
-                                        {product.sizes?.map(size => <option key={size}>{size}</option>)}
+                                    <select
+                                        defaultValue=""
+                                        className="select bg-white border border-sky-400 w-full"
+                                        name="size"
+                                    >
+                                        <option disabled value="">
+                                            Select Size (If applicable)
+                                        </option>
+                                        {product.sizes?.map((size) => (
+                                            <option key={size}>{size}</option>
+                                        ))}
                                     </select>
 
-                                    <label className="block text-sky-400 font-medium mt-2">Select the color</label>
-                                    <select defaultValue="" className="select bg-white border border-sky-400 w-full" name="color">
-                                        <option disabled value="">Select Color (If applicable)</option>
-                                        {product.colors?.map(color => <option key={color}>{color}</option>)}
+                                    <label className="block text-sky-400 font-medium mt-2">
+                                        Select the color
+                                    </label>
+                                    <select
+                                        defaultValue=""
+                                        className="select bg-white border border-sky-400 w-full"
+                                        name="color"
+                                    >
+                                        <option disabled value="">
+                                            Select Color (If applicable)
+                                        </option>
+                                        {product.colors?.map((color) => (
+                                            <option key={color}>{color}</option>
+                                        ))}
                                     </select>
 
-                                    <label className="block text-sky-400 font-medium mt-2">Quantity</label>
+                                    <label className="block text-sky-400 font-medium mt-2">
+                                        Quantity
+                                    </label>
                                     <input
                                         required
                                         defaultValue={1}
@@ -168,7 +199,10 @@ const ProductDetails = () => {
                                         className="btn btn-info hover:text-white btn-outline btn-wide mt-3"
                                     />
                                     <p>Or,</p>
-                                    <button onClick={(e) => handleOrderNow(e)} className='btn btn-info hover:text-white btn-outline btn-wide'>
+                                    <button
+                                        onClick={(e) => handleOrderNow(e)}
+                                        className="btn btn-info hover:text-white btn-outline btn-wide"
+                                    >
                                         Order Now
                                     </button>
                                 </fieldset>
@@ -177,15 +211,13 @@ const ProductDetails = () => {
                     </div>
                 </div>
 
-            </div>
-            <div className='text-sky-400 px-5 lg:px-30 mb-10 text-xl'>
-                <p className='font-bold mb-2'>Description</p>
-                <p>{product?.description}</p>
-            </div>
-            <div>
-                <Categories></Categories>
+                <div className="text-sky-400 text-xl w-full lg:w-1/2">
+                    <p className="font-bold mb-2">Description</p>
+                    <p>{product?.description}</p>
+                </div>
             </div>
         </div>
+
     );
 };
 
