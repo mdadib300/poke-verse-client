@@ -8,7 +8,7 @@ const Navbar = () => {
 
     const { user } = useContext(AuthContext);
 
-    
+
 
     const links = <>
         <li><Link to='/about'>About Us</Link></li>
@@ -32,7 +32,12 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link to='/' className="w-30 m-2"><img src={logo}/></Link>
+                    <Link
+                        to="/"
+                        className="absolute left-1/2 transform -translate-x-1/2 lg:static lg:transform-none w-28 pb-1 lg:pb-0"
+                    >
+                        <img src={logo} alt="Logo" className="w-full" />
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

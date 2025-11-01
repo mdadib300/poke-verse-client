@@ -18,12 +18,13 @@ const SignUp = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
         if (!passwordRegex.test(password)) {
             Swal.fire({
-                title: "Sorry",
-                text: "Password must be at least 8 characters long and include both letters and numbers",
+                title: "Invalid Password",
+                text: "Your password must be at least 8 characters long and include at least one letter, one number, and one special character (e.g. @, $, !, %, *, ? or &).",
+                icon: "warning",
                 confirmButtonText: "Okay",
                 customClass: {
                     confirmButton: 'bg-neutral-900 hover:bg-neutral-800 text-white px-4 py-2 rounded'
@@ -32,6 +33,7 @@ const SignUp = () => {
             });
             return;
         }
+
         console.log(name, email, password);
         createUser(email, password)
             .then(result => {
@@ -39,7 +41,7 @@ const SignUp = () => {
                 console.log(user);
                 const userInfo = {
                     name: name,
-                    emial: email
+                    email: email
                 };
                 axiosPublic.post('/users', userInfo)
                     .then(res => {
