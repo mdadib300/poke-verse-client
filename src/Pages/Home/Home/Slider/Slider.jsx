@@ -16,7 +16,6 @@ const Slider = () => {
                 showThumbs={false}
                 showStatus={false}
                 showArrows={false}
-                className='px-0 lg:px-50'
             >
                 {
                     sliders.map((slider, index)=><div
