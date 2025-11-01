@@ -3,6 +3,8 @@ import useAuth from '../../hooks/useAuth';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import useCart from '../../hooks/useCart';
 import Swal from 'sweetalert2';
+import { Carousel } from 'react-responsive-carousel';
+import Categories from '../../Pages/Home/Home/Categories/Categories';
 
 const ProductDetails = () => {
     const product = useLoaderData();
@@ -24,7 +26,7 @@ const ProductDetails = () => {
                 quantity,
                 price: finalPrice,
                 email: user.email,
-                imageLink: product.imageLink,
+                image: product.images[0],
                 category: product.category,
                 size: e.target.size.value,
                 color: e.target.color.value,
@@ -102,12 +104,29 @@ const ProductDetails = () => {
                 <div className="hero-content flex-col lg:flex-row items-start gap-8">
 
 
-                    <div className="w-full mr-0 lg:mr-20">
-                        <div>
-                            <img src={product.imageLink} className='w-500 h-[350px] md:h-[570px] rounded-lg' />
-                        </div>
-                    </div>
+                    {/* <div >
 
+                    </div> */}
+
+                    <Carousel
+                        autoPlay={false}
+                        interval={5000}
+                        infiniteLoop={true}   
+                        stopOnHover={false}
+                        showThumbs={false}
+                        showStatus={false}
+                        swipeable={true}       
+                        emulateTouch={true}
+                        className="w-full mr-0 lg:mr-16"
+
+                    >
+                        {
+                            product.images.map((image, index) => <div key={index}>
+                                <img src={image} className="w-full aspect-square object-cover rounded-lg" />
+                            </div>)
+                        }
+
+                    </Carousel>
 
                     <div className="w-full">
                         <h1 className="text-3xl font-bold mb-3">{product.title}</h1>
@@ -162,6 +181,9 @@ const ProductDetails = () => {
             <div className='text-sky-400 px-5 lg:px-30 mb-10 text-xl'>
                 <p className='font-bold mb-2'>Description</p>
                 <p>{product?.description}</p>
+            </div>
+            <div>
+                <Categories></Categories>
             </div>
         </div>
     );
