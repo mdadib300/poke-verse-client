@@ -36,7 +36,7 @@ const Orders = () => {
     }
 
     return (
-        <div className="text-sky-400 px-5 lg:px-25">
+        <div className="text-sky-400 px-5 lg:px-25 min-h-screen">
             <Title heading="Orders"></Title>
             <div>
                 <div className="overflow-x-auto">

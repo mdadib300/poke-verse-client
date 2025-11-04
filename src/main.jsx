@@ -39,6 +39,7 @@ import About from './Pages/Home/About/About.jsx'
 import Contact from './Pages/Home/Contact/Contact.jsx'
 import AddCategory from './Pages/Dashboard/AddCategory/AddCategory.jsx'
 import Categories from './Pages/Home/Home/Categories/Categories.jsx'
+import Policy from './Pages/Home/Policy/Policy.jsx'
 
 const queryClient = new QueryClient()
 
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
       {
         path: '/about',
         element: <About></About>
+      },
+      {
+        path: '/policy',
+        element: <Policy></Policy>
       },
       {
         path: '/contact',

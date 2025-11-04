@@ -43,7 +43,7 @@ const AllOrders = () => {
     };
 
     return (
-        <div className="text-sky-500 px-5 lg:px-30">
+        <div className="text-sky-500 px-5 lg:px-30 min-h-screen">
             <Title heading="All Orders"></Title>
             <div>
                 <div className="overflow-x-auto">

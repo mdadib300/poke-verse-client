@@ -32,7 +32,7 @@ const ManageSliders = () => {
         });
     }
     return (
-        <div>
+        <div className='min-h-screen'>
             <Title heading="Manage Sliders"></Title>
             <div>
                 <div className="overflow-x-auto flex justify-center">

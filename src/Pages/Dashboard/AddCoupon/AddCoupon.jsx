@@ -33,7 +33,7 @@ const AddCoupon = () => {
     };
 
     return (
-        <div className="p-5">
+        <div className="p-5 min-h-screen">
             <Title heading="Add a Coupon"></Title>
             <div className="flex items-center justify-center p-5">
                 <form onSubmit={handleAddCoupon} className="space-y-4 flex flex-col justify-center">

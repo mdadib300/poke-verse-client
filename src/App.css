@@ -1,2 +1,30 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+
+/* Carousel Arrow */
+.carousel .control-arrow {
+  opacity: 1 !important;
+  background: rgba(0, 0, 0, 0.3) !important;
+  transition: none !important;
+}
+
+.carousel .control-arrow:hover {
+  background: rgba(0, 0, 0, 0.3) !important; 
+}
+
+.carousel .control-prev.control-arrow::before,
+.carousel .control-next.control-arrow::before {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  content: "";
+  display: inline-block;
+}
+
+.carousel .control-prev.control-arrow::before {
+  border-right: 8px solid white; 
+}
+
+.carousel .control-next.control-arrow::before {
+  border-left: 8px solid white;
+}

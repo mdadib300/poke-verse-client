@@ -35,36 +35,9 @@ const ManageCoupons = () => {
     };
 
     return (
-        <div className="px-5 lg:px-30">
+        <div className="px-5 lg:px-30 min-h-screen">
             <Title heading="Manage Coupons"></Title>
             <div className="overflow-x-auto mt-4">
-                {/* <table className="table text-sky-400">
-                    <thead>
-                        <tr className="border-y-2 border-sky-300">
-                            <th>Coupon Code</th>
-                            <th>Discount (%)</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {coupons.slice().reverse().map((coupon) => (
-                            <tr key={coupon._id} className="border-y border-sky-400">
-                                <td className="font-bold">{coupon.code}</td>
-                                <td>{coupon.discountPercent}%</td>
-                                <td>
-                                    <button
-                                        onClick={() => handleDelete(coupon._id)}
-                                        className="text-xl text-red-500 hover:text-red-600"
-                                    >
-                                        <MdDelete />
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table> */}
-
-
                 <table className="table text-sky-400">
                     <tbody>
                         {

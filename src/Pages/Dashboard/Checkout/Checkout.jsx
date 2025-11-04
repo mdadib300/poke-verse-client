@@ -12,7 +12,7 @@ const Checkout = () => {
 
     const { user } = useContext(AuthContext);
     const [cart] = useCart();
-    const [deliveryCharge, setDeliveryCharge] = useState(150);
+    const [deliveryCharge, setDeliveryCharge] = useState(100);
     const [discount, setDiscount] = useState(0);
     const [couponCode, setCouponCode] = useState("");
     const axiosSecure = useAxiosSecure();
@@ -66,7 +66,7 @@ const Checkout = () => {
             orderTime: new Date(),
         };
         Swal.fire({
-            title: "Confirm Placing the order?",
+            title: "Confirm Placing the order? If confirm, please wait till confirmation alert.",
             showCancelButton: true,
             confirmButtonColor: "#262626",
             cancelButtonColor: "#d33",
@@ -103,17 +103,19 @@ const Checkout = () => {
     const handleDeliveryLocation = (e) => {
         const selected = e.target.value;
         if (selected === "Inside Dhaka") {
-            setDeliveryCharge(100);
+            setDeliveryCharge(60);
+        } else if (selected === "Suburbs Dhaka") {
+            setDeliveryCharge(80);
         } else if (selected === "Outside Dhaka") {
-            setDeliveryCharge(150);
+            setDeliveryCharge(100);
         }
     };
 
     return (
         <div>
             <Title heading="Checkout"></Title>
-            <div className="flex items-center justify-center p-5">
-                <form onSubmit={handlePlaceOrder} className="space-y-4 flex flex-col justify-center">
+            <div className="flex items-center justify-center w-full lg:w-4/6 p-5 mx-auto">
+                <form onSubmit={handlePlaceOrder} className="space-y-4 w-full flex flex-col justify-center">
                     <label className="block text-sky-400 font-medium">Your Full Name</label>
                     <input
                         type="text"
@@ -142,6 +144,7 @@ const Checkout = () => {
                     <select required defaultValue="Select Delivery Location" className="select bg-white text-sky-400 border-1 border-sky-400" name="deliveryLocation" onChange={handleDeliveryLocation}>
                         <option disabled >Select Delivery Location</option>
                         <option>Inside Dhaka</option>
+                        <option>Suburbs Dhaka</option>
                         <option>Outside Dhaka</option>
                     </select>
                     <div className="mt-3">
@@ -180,7 +183,7 @@ const Checkout = () => {
                         <option>Cash On Delivery</option>
                         {/* <option>Online Payment</option> */}
                     </select>
-                    <input type="submit" value="Place Order" className="px-4 py-2 rounded-lg border border-sky-400 bg-sky-100 text-sky-400 font-medium transition-all duration-200 hover:bg-sky-400 hover:text-white" />
+                    <input type="submit" value="Place Order" className="mt-2 px-4 py-2 rounded-lg border border-sky-400 bg-sky-100 text-sky-400 font-medium transition-all duration-200 hover:bg-sky-400 hover:text-white" />
                 </form>
             </div>
         </div>

@@ -68,7 +68,7 @@ const Users = () => {
         });
     }
     return (
-        <div className="text-sky-400 px-5 lg:px-30">
+        <div className="text-sky-400 px-5 lg:px-30 min-h-screen">
             <Title heading="All Users"></Title>
             <div>
                 <div className="overflow-x-auto">

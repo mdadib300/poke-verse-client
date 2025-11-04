@@ -30,7 +30,7 @@ const AddCategory = () => {
         }
     }
     return (
-        <div>
+        <div className='min-h-screen'>
             <Title heading="Add Category"></Title>
             <div className="flex items-center justify-center p-5">
                 <form onSubmit={handleAddCategory} className="space-y-4 flex flex-col justify-center">

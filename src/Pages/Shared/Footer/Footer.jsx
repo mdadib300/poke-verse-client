@@ -18,19 +18,20 @@ const Footer = () => {
 
     return (
         <div>
-            <footer>
-                <div className="footer sm:footer-horizontal bg-white text-sky-400 p-4 shadow-[0_-4px_10px_rgba(0,0,0,0.1)] pl-5 lg:pl-30">
+            <footer className='bg-slate-900 text-white'>
+                <div className="footer sm:footer-horizontal pt-7 lg:pt-13 p-4 shadow-[0_-4px_10px_rgba(0,0,0,0.1)] pl-5 lg:pl-30">
                     <nav>
-                        <h6 className="footer-title text-sky-600">Products</h6>
+                        <h6 className="footer-title text-white">Products</h6>
                         {
                             categories.map((category, index) => <Link key={index} to="/allproductandcategories">{category.category}</Link>)
                         }
                     </nav>
                     <nav>
-                        <h6 className="footer-title text-sky-600">Info.</h6>
+                        <h6 className="footer-title text-white">Info.</h6>
                         <Link to="/about">About Us</Link>
-                        <Link to="/about">Retun & Exchange</Link>
-                        <Link to="/about">Order Issues</Link>
+                        <Link to="/policy">Policy</Link>
+                        <Link to="/policy">Retun & Exchange</Link>
+                        <Link to="/policy">Order Issues</Link>
                         <Link to="/contact">Contact</Link>
                     </nav>
                     <nav>
@@ -48,7 +49,7 @@ const Footer = () => {
                         </div>
                     </nav>
                 </div>
-                <p className='text-center text-sky-400 pb-5'>Copyright © {new Date().getFullYear()} - All right reserved by Poké Verse</p>
+                <p className='text-center pb-5'>Copyright © {new Date().getFullYear()} - All right reserved by PokéVerse</p>
             </footer>
         </div>
     );

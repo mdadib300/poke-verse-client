@@ -1,6 +1,7 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import useSliders from '../../../../hooks/useSliders';
+import DisplayCategoryProducts from "../DisplayCategoryProducts/DisplayCategoryProducts";
 
 const Slider = () => {
 
@@ -15,7 +16,6 @@ const Slider = () => {
                 stopOnHover={false}
                 showThumbs={false}
                 showStatus={false}
-                showArrows={false}
             >
                 {
                     sliders.map((slider, index)=><div

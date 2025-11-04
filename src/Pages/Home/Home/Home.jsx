@@ -1,12 +1,11 @@
-import React from 'react';
+import DisplayCategoryProducts from './DisplayCategoryProducts/DisplayCategoryProducts';
 import Slider from './Slider/Slider';
-import Categories from './Categories/Categories';
 
 const Home = () => {
     return (
         <div>
             <Slider></Slider>
-            <Categories></Categories>
+            <DisplayCategoryProducts></DisplayCategoryProducts>
         </div>
     );
 };

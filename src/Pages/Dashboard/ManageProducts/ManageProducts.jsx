@@ -34,7 +34,7 @@ const ManageProducts = () => {
         });
     }
     return (
-        <div>
+        <div className='min-h-screen'>
             <Title heading="Manage Products"></Title>
             <div className="px-5 lg:px-30">
                 <div className="overflow-x-auto text-sky-400">

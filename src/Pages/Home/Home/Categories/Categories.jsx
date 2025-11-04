@@ -26,11 +26,3 @@ const Categories = () => {
 };
 
 export default Categories;
-
-// grid-cols-4
-                // [@media(max-width:1230px)]:grid-cols-3
-                // [@media(max-width:905px)]:grid-cols-2
-                // [@media(max-width:380px)]:grid-cols-1 
-                // gap-2 
-                // [@media(max-width:1370px)]:gap-5 
-                // lg:gap-15

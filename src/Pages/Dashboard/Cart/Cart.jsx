@@ -41,7 +41,7 @@ const Cart = () => {
     }
 
     return (
-        <div className="text-black px-5 lg:px-30">
+        <div className="text-black px-5 lg:px-30 min-h-screen">
             <h1 className="text-2xl"></h1>
             <div>
                 <Title heading="Your Cart"></Title>
