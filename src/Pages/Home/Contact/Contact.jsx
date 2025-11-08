@@ -6,11 +6,11 @@ const Contact = () => {
     return (
         <div className='px-5 lg:px-30'>
             <Title heading="Conact Info."></Title>
-            <div className='text-sky-400 text-xl mb-5'>
+            <div className='text-sky-400 text-xl mb-5 min-h-screen'>
                 <p>
                     <b>📩 Contact Us</b><br />
                     For any order-related issues, please reach out at:<br />
-                    Email: <br />
+                    Email: info@pokeversebd.shop<br />
                     Phone: 01607610104<br />
                 </p>
                 <p className='mt-3 font-bold'>Social Media Links:</p>

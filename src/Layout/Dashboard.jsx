@@ -36,8 +36,8 @@ const Dashboard = () => {
                                             <li><NavLink to='/dashboard/manageproducts'>Manage Products</NavLink></li>
                                             <li><NavLink to='/dashboard/users'>Users</NavLink></li>
                                             <li><NavLink to='/dashboard/allorders'>Orders</NavLink></li>
-                                            <li><NavLink to='/dashboard/addslider'>Add Slider Image</NavLink></li>
-                                            <li><NavLink to='/dashboard/managesliders'>Manage Slider Images</NavLink></li>
+                                            {/* <li><NavLink to='/dashboard/addslider'>Add Slider Image</NavLink></li> */}
+                                            {/* <li><NavLink to='/dashboard/managesliders'>Manage Slider Images</NavLink></li> */}
                                             <li><NavLink to='/dashboard/addcoupon'>Add Coupon</NavLink></li>
                                             <li><NavLink to='/dashboard/managecoupons'>Manage Coupons</NavLink></li>
                                         </>
