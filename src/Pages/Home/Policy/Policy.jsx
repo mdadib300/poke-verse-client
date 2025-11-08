@@ -3,10 +3,10 @@ import Title from '../../../Components/TItle/Title';
 
 const Policy = () => {
     return (
-        <div className='min-h-screen flex items-center'>
+        <div className='flex items-center'>
             <div className='px-5 lg:px-30'>
                 <Title heading="Our Policy"></Title>
-                <div className='text-sky-400 text-xl mb-5'>
+                <div className='text-sky-400 text-xl mb-5 min-h-screen'>
                     <p>
                         Thank you for shopping with Pokeverse!
                         <br />

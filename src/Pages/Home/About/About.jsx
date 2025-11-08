@@ -10,7 +10,7 @@ const About = () => {
 
 
 
-            <div className='lg:flex justify-center mb-10'>
+            <div className='lg:flex justify-center items-center mb-10'>
                 <div>
                     <div>
                         <p className='text-xl text-sky-400'>Welcome to Pokeverse — your ultimate online destination for anime-inspired
