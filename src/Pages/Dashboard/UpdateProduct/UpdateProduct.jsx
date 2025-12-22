@@ -20,6 +20,14 @@ const UpdateProduct = () => {
         setCategories(res.data);
     };
 
+    const [selectedCategory, setSelectedCategory] = useState("");
+
+    useEffect(() => {
+        if (product?.category) {
+            setSelectedCategory(product.category);
+        }
+    }, [product]);
+
     useEffect(() => {
         fetchCategories();
     }, []);
@@ -31,19 +39,19 @@ const UpdateProduct = () => {
 
         const imageFiles = [form.image1.files[0], form.image2.files[0], form.image3.files[0]].filter(Boolean);
 
-        if (imageFiles.length === 0) {
-            Swal.fire({
-                title: "Image Required",
-                text: "Please upload at least one product image.",
-                icon: "warning",
-                confirmButtonText: "Okay",
-                customClass: {
-                    confirmButton: "bg-neutral-900 hover:bg-neutral-800 text-white px-4 py-2 rounded"
-                },
-                buttonsStyling: false
-            });
-            return;
-        }
+        // if (imageFiles.length === 0) {
+        //     Swal.fire({
+        //         title: "Image Required",
+        //         text: "Please upload at least one product image.",
+        //         icon: "warning",
+        //         confirmButtonText: "Okay",
+        //         customClass: {
+        //             confirmButton: "bg-neutral-900 hover:bg-neutral-800 text-white px-4 py-2 rounded"
+        //         },
+        //         buttonsStyling: false
+        //     });
+        //     return;
+        // }
 
         const uploadedImages = [];
         if (imageFiles.length > 0) {
@@ -83,6 +91,7 @@ const UpdateProduct = () => {
                 },
                 buttonsStyling: false
             });
+
             navigate("/dashboard/manageProducts");
         }
     };
@@ -110,10 +119,27 @@ const UpdateProduct = () => {
                     ></textarea>
 
                     <label className="block text-sky-400 font-medium mt-3">Product Category</label>
-                    <select name="category" defaultValue={product.category} required className="select">
+                    {/* <select name="category" defaultValue={product.category} required className="select">
                         <option disabled>Select Category</option>
                         {categories.map((category, index) => (
                             <option key={index}>{category.category}</option>
+                        ))}
+                    </select> */}
+
+                    <select
+                        name="category"
+                        value={selectedCategory}
+                        onChange={(e) => setSelectedCategory(e.target.value)}
+                        required
+                        className="select"
+                    >
+                        <option disabled value="">
+                            Select Category
+                        </option>
+                        {categories.map((category, index) => (
+                            <option key={index} value={category.category}>
+                                {category.category}
+                            </option>
                         ))}
                     </select>
 
@@ -145,10 +171,11 @@ const UpdateProduct = () => {
                         className="w-full rounded-lg border border-sky-300 bg-sky-50 text-sky-400 p-3 focus:outline-none focus:ring-2 focus:ring-sky-200"
                     />
 
-                    <label className="block text-sky-400 font-medium mt-3">Product Photos</label>
+                    <label className="block text-sky-400 font-medium mt-3">Add Photos</label>
                     <input type="file" name="image1" className="file-input" />
                     <input type="file" name="image2" className="file-input" />
                     <input type="file" name="image3" className="file-input" />
+
 
                     <input
                         className="w-full mt-4 px-4 py-2 rounded-lg border border-sky-400 bg-sky-100 text-sky-400 font-medium hover:bg-sky-400 hover:text-white"
