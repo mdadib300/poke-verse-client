@@ -1,5 +1,4 @@
 import { Link, NavLink, Outlet } from 'react-router-dom';
-import './Dashboard.css';
 import useAdmin from '../hooks/useAdmin';
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';

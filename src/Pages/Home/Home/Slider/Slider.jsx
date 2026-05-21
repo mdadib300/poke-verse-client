@@ -19,7 +19,6 @@ const Slider = () => {
                 showThumbs={false}
                 showStatus={false}
             >
-
                 <div
                     className="hero h-[200px] md:h-[390px] lg:h-[550px]"
                     style={{
@@ -44,8 +43,6 @@ const Slider = () => {
                     }}
                 >
                 </div>
-
-
             </Carousel>
         </div>
     );
