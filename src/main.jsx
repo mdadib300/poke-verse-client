@@ -5,7 +5,6 @@ import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Main from "./Layout/Main.jsx";
 import Home from "./Pages/Home/Home/Home.jsx";
-// import TShirts from './Pages/Home/TShirts/TShirts.jsx'
 import Login from "./Pages/Home/Login/Login.jsx";
 import AuthProvider from "./providers/AuthProvider.jsx";
 import SignUp from "./Pages/Home/SignUp/SignUp.jsx";
