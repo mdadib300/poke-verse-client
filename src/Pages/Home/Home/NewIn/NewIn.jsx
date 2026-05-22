@@ -3,12 +3,12 @@ import Title from "../../../../Components/TItle/Title";
 import useLimitedProducts from "../../../../hooks/useLimitedProducts";
 
 const NewIn = () => {
-  const [products, loading] = useLimitedProducts().slice(0, 8);
+  const [products, loading] = useLimitedProducts();
 
   return (
     <div className="bg-white mb-30">
       <div className="flex justify-center">
-        <Title heading={"New-In"} />
+        <Title heading={"New Arrivals"} />
       </div>
 
       {loading ? (

@@ -7,7 +7,7 @@ const useLimitedProducts = () => {
   const { data: products = [], isPending: loading } = useQuery({
     queryKey: ["limitedProducts"],
     queryFn: async () => {
-      const res = await axiosPublic.get("/products?limit=16");
+      const res = await axiosPublic.get("/products?limit=8");
       return res.data;
     },
   });
